@@ -7,7 +7,7 @@
             <div class="navigation-container">
                 <i class="fa fa-bars" id="navIcon" @click="toggleMobileNavigation()"></i>
                 <nav>
-                    <i class="fa fa-chevron-down" id="closeIcon" @click="closeMobileNavigation()" style="font-size: 30px; width: 30px; height: 30px;"></i>
+                    <i class="fa fa-times" id="closeIcon" @click="closeMobileNavigation()" style="font-size: 24px; width: 24px; height: 24px; color: #FFFFFF;"></i>
                     <ul class="d-flex justify-content-between align-items-center list-unstyled m-0">
                         <li v-for="(item, index) in header" :key="index">
                             <span class="dropbtn" @click="allowClick($event)">
