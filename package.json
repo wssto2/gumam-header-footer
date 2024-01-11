@@ -1,7 +1,18 @@
 {
-  "name": "gumam-header-footer",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@wssto2/gumam-header-footer",
+  "version": "1.0.0",
+  "private": false,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wssto2/gumam-header-footer.git"
+    },
+    "bugs": {
+        "url": "https://github.com/wssto2/gumam-header-footer/issues"
+    },
+    "homepage": "https://github.com/wssto2/gumam-header-footer",
+    "publishConfig": {
+        "access": "public"
+    },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
