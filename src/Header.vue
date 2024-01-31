@@ -84,14 +84,7 @@
 
             toggleMobileNavigation() {
                 const nav = document.querySelector(".navigation-container nav");
-
-                if (nav.classList.contains("active")) {
-                    // 'active' class is present, remove it
-                    nav.classList.remove("active");
-                } else {
-                    // 'active' class is not present, add it
-                    nav.classList.add("active");
-                }
+                nav.classList.toggle("active");
             },
 
             closeMobileNavigation() {

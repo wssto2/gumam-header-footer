@@ -110,9 +110,9 @@
                   </div>
                   <div class="footer-details">
                       <div v-for="(footerItem, index) in footer" :key="'footer_item_' + index">
-                          <span @click="toggleList(transformToId(footerItem.title))">
+                          <span class="menu-container" @click="toggleList(transformToId(footerItem.title))">
                               <h5>{{ footerItem.title }}</h5>
-                              <span><i :id="transformToId(footerItem.title) + '_icon'" class="fa fa-chevron-down" style="color: #ffa700;"></i></span>
+                              <span class="icon" :id="transformToId(footerItem.title) + '_icon'"><i class="fa fa-chevron-down" style="color: #ffa700;"></i></span>
                           </span>
                           <ul :id="transformToId(footerItem.title)" class="dropdown">
                               <li v-for="(footerLink, index) in footerItem.children" :key="'footer_item_' + index">
