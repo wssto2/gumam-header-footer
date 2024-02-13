@@ -11,7 +11,9 @@
                     <i class="fa fa-bars" id="navIcon"></i>
                 </span>
                 <nav>
-                    <i class="fa fa-times" id="closeIcon" @click="closeMobileNavigation()" style="font-size: 24px; width: 24px; height: 24px; color: #FFFFFF;"></i>
+                    <span @click="closeMobileNavigation()">
+                        <i class="fa fa-times" id="closeIcon" style="font-size: 24px; width: 24px; height: 24px; color: #FFFFFF;"></i>
+                    </span>
                     <ul class="d-flex justify-content-between align-items-center list-unstyled m-0">
                         <li v-for="(item, index) in header" :key="index">
                             <span class="dropbtn" @click="allowClick($event)">
