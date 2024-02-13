@@ -2,10 +2,14 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="https://gumam.com/wp-content/uploads/2022/09/Group-4.png" alt="Gumam">
+                <a :href="url">
+                    <img src="https://gumam.com/wp-content/uploads/2022/09/Group-4.png" alt="Gumam">
+                </a>
             </div>
             <div class="navigation-container">
-                <i class="fa fa-bars" id="navIcon" @click="toggleMobileNavigation()"></i>
+                <span @click="toggleMobileNavigation()">
+                    <i class="fa fa-bars" id="navIcon"></i>
+                </span>
                 <nav>
                     <i class="fa fa-times" id="closeIcon" @click="closeMobileNavigation()" style="font-size: 24px; width: 24px; height: 24px; color: #FFFFFF;"></i>
                     <ul class="d-flex justify-content-between align-items-center list-unstyled m-0">
@@ -53,6 +57,7 @@
             return {
                 logo: require("@/assets/images/gumam-logo.png"),
                 header: {},
+                url: '',
                 windowWidth: 0
             }
         },
@@ -75,6 +80,7 @@
                 axios.get(apiUri)
                     .then((response) => {
                         this.header = response.data.header.schema;
+                        this.url = response.data.site_url;
                     })
             },
 
@@ -99,8 +105,6 @@
 
             allowClick(event) {
 
-                console.log("Element: ", event.target)
-
                 const parentLi = event.target.closest('li');
 
                 if (!parentLi) {
@@ -116,8 +120,6 @@
                 if (window.innerWidth < 1120) {
                     event.preventDefault();
                 }
-
-                console.log(nav)
 
                 // Check if the 'active' class is present
                 if (nav.classList.contains("active")) {

@@ -93,7 +93,7 @@
                       </span>
                       <span>
                           <p>{{ meta.contact_title }}</p>
-                          <a :href="'tel:+' + removeSpaces(meta.contact_number)">{{ meta.contact_number }}</a>
+                          <a v-if="meta.contact_number !== undefined" :href="'tel:+' + removeSpaces(meta.contact_number)">{{ meta.contact_number }}</a>
                       </span>
                   </div>
               </div>
@@ -172,9 +172,10 @@
               isFirstTime: true,
           }
       },
-      
       computed: {
+
       },
+
       methods: {
           fetchNavigation(apiUri) {
               axios.get(apiUri)
@@ -197,10 +198,6 @@
               return newName;
           },
 
-          removeSpaces(number) {
-              return number.replace(/ /g, '');
-          },
-
           showContent(index) {
               this.activeIndex = index;
           },
@@ -211,6 +208,10 @@
               } else {
                   this.activeIndex = index;
               }
+          },
+
+          removeSpaces(number) {
+            return number.replace(/\s/g, '');
           },
 
           handleResize() {
